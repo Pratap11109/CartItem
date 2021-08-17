@@ -10,9 +10,9 @@ class CartItem extends React.Component {
                          <img style={styles.img} alt="Img Product" />
                     </div>
                     <div className="right-block">
-                         <div style={{ color: "red" }, styles.fontWeight}>{obj.title}</div>
-                         <div style={{ color: "#770" }, styles.fontWeight}>Rs {obj.price}</div>
-                         <div style={{ color: "#770" }, styles.fontWeight}>qty {obj.qty}</div>
+                         <div style={{ color: "red" ,fontSize:25 }}>{obj.title}</div>
+                         <div style={{ color: "#776", fontSize:18 }}>Rs {obj.price}</div>
+                         <div style={{ color: "#776", fontSize:18 }}>Qty {obj.qty}</div>
                          <div className="cart-item-actions">
                               <img className="action-icons" onClick={()=>onIncrment(obj)} alt="Increment" src="https://t4.ftcdn.net/jpg/01/26/10/59/240_F_126105961_6vHCTRX2cPOnQTBvx9OSAwRUapYTEmYA.jpg" />
                               <img className="action-icons" onClick={()=>onDecrement(obj)} alt="Decrement" src="https://t4.ftcdn.net/jpg/03/30/24/99/240_F_330249927_k8oy0p4zZqSAdxd1jxlhB0ZPT3fGLpjw.jpg" />
