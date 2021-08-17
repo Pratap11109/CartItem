@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Cart from './Cart'
+import Cart from './Cart';
+import NavBar from './NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   state = {
@@ -17,6 +19,16 @@ class App extends Component {
         qty: 1
       }, {
         id: 3,
+        price: 99,
+        title: "Watch",
+        qty: 1
+      }, {
+        id: 4,
+        price: 99,
+        title: "Watch",
+        qty: 1
+      }, {
+        id: 5,
         price: 99,
         title: "Watch",
         qty: 1
@@ -49,12 +61,20 @@ class App extends Component {
       arr: this.state.arr
     })
   }
+  total= ()=> {
+    let total=0;
+  this.state.arr.forEach((obj)=>total+=obj.qty);
+    return total;
+  }
 
   render() {
     const { arr } = this.state;
     return (
       <div className="App">
+        
+        <NavBar total={this.total()} />
         < Cart arr={arr}
+        className="container"
           onIncrese={this.incrmentQty}
           onDecrese={this.decrmentQty}
           onDelete={this.deleteItem} />
